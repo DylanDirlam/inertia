@@ -45,6 +45,10 @@ type InertiaLinkProps = BaseInertiaLinkProps & Omit<React.HTMLAttributes<HTMLEle
 
 type InertiaLink = React.FunctionComponent<InertiaLinkProps>
 
+type InertiaHead = React.FunctionComponent<{
+  title?: string
+}>
+
 export function usePage<
   Page extends Inertia.Page = Inertia.Page
 >(): Page
@@ -61,6 +65,8 @@ export const Link: InertiaLink
 export const InertiaApp: AppType
 
 export const App: AppType
+
+export const Head: InertiaHead
 
 type setDataByObject<TForm> = (data: TForm) => void
 type setDataByMethod<TForm> = (data: (previousData: TForm) => TForm) => void
